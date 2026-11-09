@@ -11,12 +11,26 @@ spec:
       taskSpec:
         metadata: {}
         stepTemplate:
-          image: uses:leartech/leartech-pipeline-catalog/tasks/go-test/pullrequest.yaml@main
+          image: uses:mikelear/leartech-pipeline-catalog/tasks/go-test/pullrequest.yaml@main
           name: ""
           resources: {}
           workingDir: /workspace/source
+          env:
+          - name: HOME
+            value: /tekton/home
+          - name: CLUSTER_ID
+            valueFrom:
+              configMapKeyRef:
+                name: jx-cluster-config
+                key: CLUSTER_ID
+                optional: true
+          envFrom:
+          - secretRef:
+              name: jx-boot-job-env-vars
+              optional: true
         steps:
-        - name: ""
+        - image: ""
+          name: ""
           resources: {}
   podTemplate:
     tolerations:
