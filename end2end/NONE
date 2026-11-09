@@ -1,0 +1,2 @@
+No end2end suite: this repo exists to exercise the pipeline's own comment
+and gate surfaces (coverage comments, machine blocks), not to serve traffic.

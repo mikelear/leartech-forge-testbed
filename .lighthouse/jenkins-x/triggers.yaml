@@ -1,0 +1,8 @@
+apiVersion: config.lighthouse.jenkins-x.io/v1alpha1
+kind: TriggerConfig
+spec:
+  presubmits:
+  - name: test
+    context: "test"
+    always_run: true
+    source: test.yaml
