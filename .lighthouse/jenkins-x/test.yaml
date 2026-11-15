@@ -12,6 +12,11 @@ spec:
         metadata: {}
         stepTemplate:
           image: uses:mikelear/leartech-pipeline-catalog/tasks/go-test/pullrequest.yaml@main
+          env:
+          - name: COVERAGE_SCOPE
+            value: "./..."
+          - name: COVERAGE_THRESHOLD
+            value: "0.0"
           name: ""
           resources: {}
           workingDir: /workspace/source
